@@ -1,23 +1,24 @@
-//
-//  ContentView.swift
-//  MarketApp
-//
-//  Created by 정무 on 12/7/25.
-//
 
 import SwiftUI
 
+struct ProductResponse: Codable {
+    let products: [Product]
+}
+
+struct Product: Codable, Identifiable {
+    let id: String
+    let title: String
+    let price: Int
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Text("Hello, World!")
         }
-        .padding()
     }
 }
+
 
 #Preview {
     ContentView()
