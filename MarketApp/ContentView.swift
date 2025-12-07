@@ -6,9 +6,9 @@ struct ProductResponse: Codable {
 }
 
 struct Product: Codable, Identifiable {
-    let id: String
+    let id: Int
     let title: String
-    let price: Int
+    let price: Double
 }
 
 struct ContentView: View {
@@ -19,7 +19,11 @@ struct ContentView: View {
                 HStack {
                     Text(product.title)
                         .font(.headline)
+                    
+                    Spacer()
+                    
                     Text("$\(product.price)")
+                        .foregroundStyle(.blue)
                 }
             }
         }
@@ -41,9 +45,6 @@ struct ContentView: View {
             }
         }
     }
-
-
-
 
 #Preview {
     ContentView()
